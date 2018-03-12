@@ -1,0 +1,11 @@
+<div class="drawer-menu-group-item {{_classes}}">
+	{{#if title}}
+		<div class="drawer-menu-group-item-title">{{{title}}}</div>
+	{{/if}}
+	{{#if _contentObjects}}
+		{{> drawerMenuContentObjects _contentObjects}}
+	{{/if}}
+	{{#if _grouping}}
+		{{> drawerMenuGroup _grouping}}
+	{{/if}}
+</div>

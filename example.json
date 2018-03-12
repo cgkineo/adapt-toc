@@ -1,0 +1,47 @@
+// simple structure: all content objects are listed (except those excluded)
+
+"_drawerMenu": {
+    "_excludeContentObjects": []
+}
+
+// custom structure: specify a hierarchy by defining groups of content objects
+
+"_drawerMenu": {
+    "_grouping": {
+        "_classes": "",
+        "_items": [
+            {
+                "_classes": "",
+                "_contentObjects": [
+                    "co-01"
+                ]
+            },
+            {
+                "title": "Learning material",
+                "_classes": "",
+                "_contentObjects": [
+                    "co-05"
+                ],
+                "_grouping": {
+                    "_classes": "",
+                    "_items": [
+                        {
+                            "title": "Questionable material",
+                            "_classes": "",
+                            "_contentObjects": [
+                                "co-10"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "Assessment",
+                "_classes": "",
+                "_contentObjects": [
+                    "co-15"
+                ]
+            }
+        ]
+    }
+}

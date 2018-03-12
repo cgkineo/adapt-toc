@@ -1,0 +1,27 @@
+{
+  "name": "adapt-contrib-tutor",
+  "version": "2.1.2",
+  "framework": ">=2.0.18",
+  "homepage": "https://github.com/adaptlearning/adapt-contrib-tutor",
+  "issues": "https://github.com/adaptlearning/adapt_framework/issues/new?title=contrib-tutor%3A%20please%20enter%20a%20brief%20summary%20of%20the%20issue%20here&body=please%20provide%20a%20full%20description%20of%20the%20problem,%20including%20steps%20on%20how%20to%20replicate,%20what%20browser(s)/device(s)%20the%20problem%20occurs%20on%20and,%20where%20helpful,%20screenshots.",
+  "displayName": "Tutor",
+  "extension": "tutor",
+  "description": "An extension which provides a basic feedback overlay for question components",
+  "main": "/js/adapt-contrib-tutor.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-extension"
+  ],
+  "license": "GPLv3",
+  "targetAttribute": "_tutor",
+  "_release": "2.1.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.1.2",
+    "commit": "3ba93b3106e7283178e527bdf2f496e843eacc7e"
+  },
+  "_source": "git://github.com/adaptlearning/adapt-contrib-tutor.git",
+  "_target": ">=2.1.2",
+  "_originalSource": "adapt-contrib-tutor",
+  "_direct": true
+}

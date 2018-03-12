@@ -1,0 +1,57 @@
+.drawer-menu {
+
+    .drawer-menu-item {
+        padding: 20px 5%;
+        width: 90%;
+
+        .drawer-menu-item-title {
+            font-size: 18px;
+            width: 100%;
+
+            .drawer-menu-item-title-inner {
+                float: left;
+                width: 80%;
+            }
+        }
+    }
+
+    .drawer-menu-group-item-title {
+    	font-size: 24px;
+    	padding: 0 5%;
+    	color: #0cc;
+        width: 90%
+    }
+
+    .drawer-menu-group-item {
+    	.drawer-menu-group {
+    		margin-left: 5%;
+    	}
+    }
+
+    .drawer-menu-item-indicator {
+        width: 16%;
+        height: 10px;
+        margin-left:4%;
+        .dir-rtl & {
+            margin-left:inherit;
+            margin-right:4%;
+        }
+        display: inline-block;
+        border-radius:5px;
+        overflow:hidden;
+        background-color:@item-color-hover;
+    }
+
+    .drawer-menu-item-indicator-complete {
+        .drawer-menu-item-indicator-bar {
+            width:100%;
+        }
+    }
+
+    .drawer-menu-item-indicator-bar {
+    	background-color: @drawer-progress-color;
+        width: 0%;
+        height: 10px;
+        .transition-background-color;
+    }
+}

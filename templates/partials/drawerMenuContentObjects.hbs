@@ -1,0 +1,36 @@
+<div class="drawer-menu-group-item-content-objects">
+    {{#each this}}
+        <div role="listitem" class="drawer-menu-item">
+            {{#drawerMenu__isClickable this}}
+                <button class="base drawer-menu-item-title clearfix" tabindex="0" role="button" data-drawer-menu-id="{{this}}" aria-label="{{title}} {{#if _isComplete}}{{_globals._accessibility._ariaLabels.complete}}{{else}}{{_globals._accessibility._ariaLabels.incomplete}}{{/if}}">
+            {{else}}
+                <div class="drawer-menu-item-title disabled clearfix">
+                    <span class="aria-label prevent-default" tabindex="0" role="button">{{_globals._accessibility._ariaLabels.locked}}. {{title}} {{#if _isComplete}}{{_globals._accessibility._ariaLabels.complete}}{{else}}{{_globals._accessibility._ariaLabels.incomplete}}{{/if}}</span>
+            {{/drawerMenu__isClickable}}
+            <div class="drawer-menu-item-title-inner accessible-text-block h5">
+            {{{drawerMenu__getTitle this}}}
+            </div>
+            {{#drawerMenu__when this "_isComplete"}}
+                <div class="drawer-menu-item-indicator drawer-menu-item-indicator-complete">
+                    <div class="drawer-menu-item-indicator-bar">
+                    </div>
+                </div>
+            {{else}}
+                {{#drawerMenu__when this "_isOptional"}}
+                    <div class="drawer-menu-item-optional-text">
+                    {{_globals._extensions._drawerMenu.optionalContent}}
+                    </div>
+                {{else}}
+                    <div class="drawer-menu-item-indicator drawer-menu-item-indicator-incomplete">
+                        <div class="drawer-menu-item-indicator-bar" style="width:{{drawerMenu__completionPercentage this}}%"><span class="aria-label" role="region" tabindex="0">{{drawerMenu__completionAria this}}</span></div>
+                    </div>
+                {{/drawerMenu__when}}
+            {{/drawerMenu__when}}
+            {{#drawerMenu__isClickable this}}
+                </button>
+                {{else}}
+                </div>
+            {{/drawerMenu__isClickable}}
+        </div>
+    {{/each}}
+</div>
