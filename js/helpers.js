@@ -61,8 +61,12 @@ define([
             var percentageComplete = Math.floor((completed / total)*100);
 
             var strings = Adapt.course.get('_globals')._extensions && Adapt.course.get('_globals')._extensions._drawerMenu;
+            var template = strings && strings.drawerMenuContentObject ? strings.drawerMenuContentObject : '{{title}}. You have completed {{percentage}}%.';
 
-            return strings && strings.drawerMenuIndicatorBar ? (strings.drawerMenuIndicatorBar +  ' ' +  percentageComplete + '%') : (percentageComplete + '%');
+            return Handlebars.helpers.compile(template, {
+                title: helpers.drawerMenu__getTitle(id),
+                percentage: percentageComplete
+            });
         }
     };
 

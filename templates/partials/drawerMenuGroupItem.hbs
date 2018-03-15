@@ -1,6 +1,6 @@
-<div class="drawer-menu-group-item {{_classes}}">
+<div role="listitem" class="drawer-menu-group-item {{_classes}}">
 	{{#if title}}
-		<div class="drawer-menu-group-item-title">{{{title}}}</div>
+		<div class="drawer-menu-group-item-title" {{{a11y_attrs_heading}}}>{{{title}}}</div>
 	{{/if}}
 	{{#if _contentObjects}}
 		{{> drawerMenuContentObjects _contentObjects}}

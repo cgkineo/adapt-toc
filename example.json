@@ -1,3 +1,5 @@
+// The following goes in course.json
+
 // simple structure: all content objects are listed (except those excluded)
 
 "_drawerMenu": {
@@ -18,6 +20,7 @@
             },
             {
                 "title": "Learning material",
+                "_ariaLevel": 1,
                 "_classes": "",
                 "_contentObjects": [
                     "co-05"
@@ -27,6 +30,7 @@
                     "_items": [
                         {
                             "title": "Questionable material",
+                            "_ariaLevel": 2,
                             "_classes": "",
                             "_contentObjects": [
                                 "co-10"
@@ -37,6 +41,7 @@
             },
             {
                 "title": "Assessment",
+                "_ariaLevel": 1,
                 "_classes": "",
                 "_contentObjects": [
                     "co-15"
@@ -44,4 +49,14 @@
             }
         ]
     }
+}
+
+// _globals._extensions
+
+"_drawerMenu": {
+    "navigationDrawerMenu": "Open drawer menu",
+    "drawerMenu": "Drawer menu",
+    "drawerMenuEnd": "You have reached the end of the drawer menu.",
+    "drawerMenuContentObject": "{{title}}. You have completed {{percentage}}%.",
+    "optionalContent": "Optional Content"
 }
