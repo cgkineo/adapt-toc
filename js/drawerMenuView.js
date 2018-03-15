@@ -12,6 +12,7 @@ define(function(require) {
             this.listenTo(Adapt, 'drawer:closed', this.onDrawerClosed);
             this.listenTo(Adapt, 'remove', this.remove);
             this.render();
+            $('.drawer').addClass('has-drawer-menu');
         },
 
         events: {
@@ -40,6 +41,7 @@ define(function(require) {
 
         onDrawerClosed: function() {
             Adapt.trigger('drawer:setDrawerDir');
+            $('.drawer').removeClass('has-drawer-menu');
         },
 
         remove: function() {

@@ -1,57 +1,100 @@
-.drawer-menu {
+.drawer.has-drawer-menu {
+  .drawer-inner {
+    border-left: 0;
+    border-right: 5px solid @drawer-border-color;
 
-    .drawer-menu-item {
-        padding: 20px 5%;
-        width: 90%;
+    .dir-rtl & {
+    }
+  }
 
-        .drawer-menu-item-title {
-            font-size: 18px;
-            width: 100%;
+  .drawer-menu-group-item {
+    .drawer-menu-group {
+      .drawer-menu-group-item-title,
+      .drawer-menu-item-title-inner {
+        text-indent: 15px;
+      }
+    }
+  }
 
-            .drawer-menu-item-title-inner {
-                float: left;
-                width: 80%;
-            }
+  .drawer-menu-group-item-title {
+    .button-text;
+    padding: (@drawer-item-padding-top / 2) @drawer-item-padding-right (@drawer-item-padding-bottom / 2) @drawer-item-padding-left;
+    background-color: darken(@drawer-item-color, 10%);
+    color: @drawer-item-text-color;
+  }
+
+  .drawer-menu-item {
+    display: block;
+    width: 100%;
+  }
+
+  .drawer-menu-item-title {
+    .button-text;
+    padding: @drawer-item-padding-top @drawer-item-padding-right @drawer-item-padding-bottom @drawer-item-padding-left;
+    border-bottom: 1px solid @drawer-item-color;
+    color: @drawer-item-text-color;
+    text-decoration: none;
+    width: 100%;
+    .transition-background-color;
+
+    &.disabled {
+      box-sizing: border-box;
+    }
+
+    .no-touch &:hover {
+      &:not(.disabled) {
+        background-color: @drawer-item-color-hover;
+        color: @drawer-item-text-color-hover;
+
+        .drawer-menu-item-indicator {
+          background-color: @drawer-progress-color-hover;
         }
-    }
 
-    .drawer-menu-group-item-title {
-    	font-size: 24px;
-    	padding: 0 5%;
-    	color: #0cc;
-        width: 90%
-    }
-
-    .drawer-menu-group-item {
-    	.drawer-menu-group {
-    		margin-left: 5%;
-    	}
-    }
-
-    .drawer-menu-item-indicator {
-        width: 16%;
-        height: 10px;
-        margin-left:4%;
-        .dir-rtl & {
-            margin-left:inherit;
-            margin-right:4%;
+        .drawer-menu-item-indicator-incomplete {
+          background-color: @drawer-item-color;
         }
-        display: inline-block;
-        border-radius:5px;
-        overflow:hidden;
-        background-color:@item-color-hover;
-    }
 
-    .drawer-menu-item-indicator-complete {
-        .drawer-menu-item-indicator-bar {
-            width:100%;
+        .drawer-menu-item-indicator-complete {
+          .drawer-menu-item-indicator-bar {
+            background-color: @drawer-progress-color-hover;
+          }
         }
+      }
     }
+  }
 
+  .drawer-menu-item-title-inner {
+    float: left;
+    width: 80%;
+  }
+
+  .drawer-menu-item-indicator {
+    width: 15%;
+    height: 8px;
+    margin-left: 4%;
+    display: inline-block;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: transparent;
+    border: 1px solid @drawer-progress-border-color;
+    .transition-background-color;
+
+    .dir-rtl & {
+      margin-left: inherit;
+      margin-right: 4%;
+    }
+  }
+
+  .drawer-menu-item-indicator-bar {
+    width: 0%;
+    height: 10px;
+    background-color: @drawer-progress-color;
+    .transition-background-color;
+  }
+
+  .drawer-menu-item-indicator-complete {
     .drawer-menu-item-indicator-bar {
-    	background-color: @drawer-progress-color;
-        width: 0%;
-        height: 10px;
-        .transition-background-color;
+      width: 100%;
     }
+  }
 }
