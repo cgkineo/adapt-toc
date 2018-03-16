@@ -13,7 +13,7 @@ define([
         drawerMenu__isClickable: function(id, options) {
             var model = Adapt.findById(id);
 
-            if (model.get('_isVisible') && Adapt.location._currentId != id) {
+            if (!model.get('_isLocked') && model.get('_isVisible') && Adapt.location._currentId != id) {
                 return options.fn(this);
             } else {
                 return options.inverse(this);

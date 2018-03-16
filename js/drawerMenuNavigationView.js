@@ -36,7 +36,7 @@ define(function(require) {
         onDrawerMenuClicked: function(event) {
             if(event && event.preventDefault) event.preventDefault();
             // put the drawer on the left
-            Adapt.trigger('drawer:setDrawerDir', 'left');
+            Adapt.trigger('drawer:setDrawerDir', Adapt.config.get('_defaultDirection') == 'rtl' ? 'right' : 'left');
             // here is where you might customise what drawer menu renders if so desired
             Adapt.drawer.triggerCustomView(new DrawerMenuView({cfg: Adapt.course.get('_drawerMenu') || {}}).$el, false);
         }

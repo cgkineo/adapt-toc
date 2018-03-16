@@ -1,9 +1,19 @@
+.drawer-menu-navigation {
+  float: left;
+
+  .dir-rtl & {
+    float: right;
+  }
+}
+
 .drawer.has-drawer-menu {
   .drawer-inner {
     border-left: 0;
     border-right: 5px solid @drawer-border-color;
 
     .dir-rtl & {
+      border-right: 0;
+      border-left: 5px solid @drawer-border-color;
     }
   }
 
@@ -26,6 +36,28 @@
   .drawer-menu-item {
     display: block;
     width: 100%;
+
+    &.locked {
+      position: relative;
+
+      &:before {
+        .icon;
+        content: "\e631";
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: @disabled-color-inverted;
+      }
+
+      .drawer-menu-item-title {
+        background-color: @disabled-color;
+        color: @disabled-color-inverted;
+      }
+
+      .drawer-menu-item-indicator {
+        display: none;
+      }
+    }
   }
 
   .drawer-menu-item-title {

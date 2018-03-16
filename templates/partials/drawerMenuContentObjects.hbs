@@ -1,6 +1,6 @@
 <div role="list" class="drawer-menu-group-item-content-objects">
     {{#each this}}
-        <div role="listitem" class="drawer-menu-item">
+        <div role="listitem" class="drawer-menu-item{{#drawerMenu__when this "_isLocked"}} locked{{/drawerMenu__when}}">
             {{#drawerMenu__isClickable this}}
                 <button class="base drawer-menu-item-title clearfix" tabindex="0" role="button" data-drawer-menu-id="{{this}}" aria-label="{{drawerMenu__completionAria this}}">
             {{else}}
