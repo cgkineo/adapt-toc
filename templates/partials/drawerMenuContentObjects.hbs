@@ -5,7 +5,7 @@
                 <button class="base drawer-menu-item-title clearfix" tabindex="0" role="button" data-drawer-menu-id="{{this}}" aria-label="{{drawerMenu__completionAria this}}">
             {{else}}
                 <div class="drawer-menu-item-title disabled clearfix">
-                    <span class="aria-label prevent-default" tabindex="0" role="button">{{_globals._accessibility._ariaLabels.locked}}. {{drawerMenu__completionAria this}}</span>
+                    <span class="aria-label prevent-default" tabindex="0" role="button">{{drawerMenu__completionAria this}}</span>
             {{/drawerMenu__isClickable}}
             <div class="drawer-menu-item-title-inner accessible-text-block h5">
             {{{drawerMenu__getTitle this}}}

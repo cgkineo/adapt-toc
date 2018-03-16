@@ -60,8 +60,13 @@ define([
 
             var percentageComplete = Math.floor((completed / total)*100);
 
-            var strings = Adapt.course.get('_globals')._extensions && Adapt.course.get('_globals')._extensions._drawerMenu;
-            var template = strings && strings.drawerMenuContentObject ? strings.drawerMenuContentObject : '{{title}}. You have completed {{percentage}}%.';
+            var lockedStr = model.get('_isLocked') ? Adapt.course.get('_globals')._accessibility._ariaLabels.locked + '. ' : '';
+            var drawerMenuStrings = Adapt.course.get('_globals')._extensions && Adapt.course.get('_globals')._extensions._drawerMenu;
+            var template = lockedStr + '{{title}}. You have completed {{percentage}}%.';
+
+            if (drawerMenuStrings && drawerMenuStrings.drawerMenuContentObject) {
+                template = lockedStr + drawerMenuStrings.drawerMenuContentObject;
+            }
 
             return Handlebars.helpers.compile(template, {
                 title: helpers.drawerMenu__getTitle(id),
