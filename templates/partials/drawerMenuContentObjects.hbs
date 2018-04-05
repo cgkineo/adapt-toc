@@ -10,21 +10,14 @@
             <div class="drawer-menu-item-title-inner accessible-text-block h5">
             {{{drawerMenu__getTitle this}}}
             </div>
-            {{#drawerMenu__when this "_isComplete"}}
-                <div class="drawer-menu-item-indicator drawer-menu-item-indicator-complete">
-                    <div class="drawer-menu-item-indicator-bar">
-                    </div>
+            {{#drawerMenu__when this "_isOptional"}}
+                <div class="drawer-menu-item-optional-text">
+                {{_globals._extensions._drawerMenu.optionalContent}}
                 </div>
             {{else}}
-                {{#drawerMenu__when this "_isOptional"}}
-                    <div class="drawer-menu-item-optional-text">
-                    {{_globals._extensions._drawerMenu.optionalContent}}
-                    </div>
-                {{else}}
-                    <div class="drawer-menu-item-indicator drawer-menu-item-indicator-incomplete">
-                        <div class="drawer-menu-item-indicator-bar" style="width:{{drawerMenu__completionPercentage this}}%"></div>
-                    </div>
-                {{/drawerMenu__when}}
+                <div class="drawer-menu-item-indicator drawer-menu-item-indicator">
+                    <div class="drawer-menu-item-indicator-bar" style="width:{{drawerMenu__completionPercentage this}}%"></div>
+                </div>
             {{/drawerMenu__when}}
             {{#drawerMenu__isClickable this}}
                 </button>
