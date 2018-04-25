@@ -2,13 +2,69 @@
   "type": "object",
   "$schema": "http://json-schema.org/draft-04/schema",
   "id": "http://jsonschema.net",
+  "globals": {
+    "navigationDrawerMenu": {
+      "type": "string",
+      "required": true,
+      "default": "Open drawer menu",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "drawerMenu": {
+      "type": "string",
+      "required": true,
+      "default": "Drawer menu",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "drawerMenuEnd": {
+      "type": "string",
+      "required": true,
+      "default": "You have reached the end of the drawer menu.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "drawerMenuContentObject": {
+      "type": "string",
+      "required": true,
+      "default": "{{title}}. You have completed {{percentage}}%.",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    },
+    "optionalContent": {
+      "type": "string",
+      "required": true,
+      "default": "Optional Content",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
   "properties": {
     "pluginLocations": {
       "type": "object",
       "properties": {
-        "config": {
+        "course": {
           "type": "object",
-          "properties": {}
+          "properties": {
+            "_drawerMenu": {
+              "type": "object",
+              "legend": "Drawer menu",
+              "properties": {
+                "_excludeContentObjects": {
+                  "type": "array",
+                  "_items": {
+                    "type": "string"
+                  },
+                  "help": "Exclude zero or more content objects from the drawer menu by listing their IDs."
+                }
+              }
+            }
+          }
         }
       }
     }
