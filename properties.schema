@@ -57,10 +57,23 @@
               "properties": {
                 "_excludeContentObjects": {
                   "type": "array",
+                  "default": [],
+                  "title": "Exclusions",
+                  "inputType": "List",
                   "_items": {
                     "type": "string"
                   },
                   "help": "Exclude zero or more content objects from the drawer menu by listing their IDs."
+                },
+                "_grouping": {
+                  "type": "object",
+                  "default": {},
+                  "title": "Grouping",
+                  "inputType": {
+                    "type": "CodeEditor",
+                    "mode": "json"
+                  },
+                  "help": "Configure the visual organisation of content objects (see example.json)."
                 }
               }
             }
