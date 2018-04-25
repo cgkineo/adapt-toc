@@ -51,7 +51,7 @@
     }
 }
 
-// _globals._extensions
+// _globals._menu
 
 "_drawerMenu": {
     "navigationDrawerMenu": "Open drawer menu",

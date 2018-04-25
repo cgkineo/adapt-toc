@@ -61,7 +61,7 @@ define([
             var percentageComplete = Math.floor((completed / total)*100);
 
             var lockedStr = model.get('_isLocked') ? Adapt.course.get('_globals')._accessibility._ariaLabels.locked + '. ' : '';
-            var drawerMenuStrings = Adapt.course.get('_globals')._extensions && Adapt.course.get('_globals')._extensions._drawerMenu;
+            var drawerMenuStrings = Adapt.course.get('_globals')._menu && Adapt.course.get('_globals')._menu._drawerMenu;
             var template = lockedStr + '{{title}}. You have completed {{percentage}}%.';
 
             if (drawerMenuStrings && drawerMenuStrings.drawerMenuContentObject) {

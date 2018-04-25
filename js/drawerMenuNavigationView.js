@@ -15,8 +15,8 @@ define(function(require) {
             this.$el.attr('role', 'button');
             this.ariaText = '';
             
-            if (Adapt.course.has('_globals') && Adapt.course.get('_globals')._extensions && Adapt.course.get('_globals')._extensions._drawerMenu && Adapt.course.get('_globals')._extensions._drawerMenu.navigationDrawerMenu) {
-                this.ariaText = Adapt.course.get('_globals')._extensions._drawerMenu.navigationDrawerMenu;
+            if (Adapt.course.has('_globals') && Adapt.course.get('_globals')._menu && Adapt.course.get('_globals')._menu._drawerMenu && Adapt.course.get('_globals')._menu._drawerMenu.navigationDrawerMenu) {
+                this.ariaText = Adapt.course.get('_globals')._menu._drawerMenu.navigationDrawerMenu;
                 this.$el.attr('aria-label', this.ariaText);
             }
             
