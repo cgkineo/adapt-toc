@@ -1,8 +1,9 @@
 define(function(require) {
 
     var Adapt = require('coreJS/adapt');
-    var Backbone = require('backbone');
-    var helpers = require('./helpers');
+    
+    require('./helpers');
+    require('./drawerViewOverrides');
 
     var drawerMenuNavigationView = require('extensions/adapt-drawerMenu/js/drawerMenuNavigationView');
 
