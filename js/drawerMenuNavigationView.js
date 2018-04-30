@@ -3,7 +3,7 @@ define(function(require) {
     var Adapt = require('coreJS/adapt');
     var Backbone = require('backbone');
 
-    var DrawerMenuView = require('extensions/adapt-drawerMenu/js/DrawerMenuView');
+    var DrawerMenuView = require('./drawerMenuView');
 
     var DrawerMenuNavigationView = Backbone.View.extend({
 
