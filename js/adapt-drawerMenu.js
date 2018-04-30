@@ -5,7 +5,7 @@ define(function(require) {
     require('./helpers');
     require('./drawerViewOverrides');
 
-    var drawerMenuNavigationView = require('extensions/adapt-drawerMenu/js/drawerMenuNavigationView');
+    var drawerMenuNavigationView = require('menu/adapt-drawerMenu/js/drawerMenuNavigationView');
 
     Adapt.on('adapt:start', function() {
         new drawerMenuNavigationView();
