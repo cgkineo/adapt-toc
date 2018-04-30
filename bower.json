@@ -5,11 +5,11 @@
   "homepage": "https://github.com/cgkineo/adapt-drawer-menu",
   "displayName" : "Drawer Menu",
   "extension" : "drawerMenu",
-  "description": "An extension which provides a drawer-based menu",
+  "description": "A drawer-based menu",
   "main": "/js/adapt-drawerMenu.js",
   "keywords": [
     "adapt-plugin",
-    "adapt-extension"
+    "adapt-menu"
   ],
   "license": "GPLv3",
   "targetAttribute": "_drawerMenu"
