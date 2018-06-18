@@ -1,6 +1,6 @@
 define([
     'handlebars',
-    'core/js/adapt',
+    'coreJS/adapt',
     './completionCalculations'
 ], function(Handlebars, Adapt, completionCalculations){
 
@@ -68,10 +68,7 @@ define([
                 template = lockedStr + drawerMenuStrings.drawerMenuContentObject;
             }
 
-            return Handlebars.helpers.compile(template, {
-                title: helpers.drawerMenu__getTitle(id),
-                percentage: percentageComplete
-            });
+            return template.replace('{{title}}', helpers.drawerMenu__getTitle(id)).replace('{{percentage}}', percentageComplete);
         }
     };
 

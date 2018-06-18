@@ -6,6 +6,13 @@
     "_excludeContentObjects": []
 }
 
+// in most scenarios it is necessary to specify a redirection page
+
+"_start": {
+    "_isEnabled": true,
+    "_id": "co-05"
+}
+
 // custom structure: specify a hierarchy by defining groups of content objects
 
 "_drawerMenu": {

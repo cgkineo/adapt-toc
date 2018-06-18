@@ -1,7 +1,7 @@
 {
   "name": "adapt-drawerMenu",
-  "version": "0.0.5",
-  "framework": ">=2.2.5",
+  "version": "0.0.6",
+  "framework": ">=2.0.8",
   "homepage": "https://github.com/cgkineo/adapt-drawer-menu",
   "displayName" : "Drawer Menu",
   "menu" : "drawerMenu",

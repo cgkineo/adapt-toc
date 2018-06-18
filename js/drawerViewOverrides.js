@@ -1,6 +1,6 @@
 define([
-    'core/js/adapt',
-    'core/js/views/drawerView'
+    'coreJS/adapt',
+    'coreViews/drawerView'
 ], function(Adapt, DrawerView) {
 
     var setupEventListeners = DrawerView.prototype.setupEventListeners;

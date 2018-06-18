@@ -16,7 +16,7 @@ define([
 
         // If it's a page
         if (viewType == 'page') {
-            var children = _.filter(contentObjectModel.findDescendantModels('components'), function(comp) {
+            var children = _.filter(getDescendantModels(contentObjectModel, 'components'), function(comp) {
                 return comp.get('_isAvailable') === true && comp.get('_isOptional') === false;
             });
 
@@ -131,13 +131,36 @@ define([
         var availableChildren = [];
 
         for(var child = 0; child < children.length; child++) {
-            var parents = children[child].getAncestorModels();
+            var parents = getAncestorModels(children[child]);
             if (!unavailableInHierarchy(parents)) {
                 availableChildren.push(children[child]);
             }
         }
 
         return availableChildren;
+    }
+
+    // backwards-compatibility for courses using framework <2.2.0
+    function getAncestorModels(context, shouldIncludeChild) {
+        var parents = [];
+
+        if (shouldIncludeChild) parents.push(context);
+
+        while (context.has("_parentId")) {
+            context = context.getParent();
+            parents.push(context);
+        }
+
+        return parents.length ? parents : null;
+    }
+
+    // backwards-compatibility for courses using framework <2.2.0
+    function getDescendantModels(model, type) {
+        if (!model.findDescendantModels) {
+            return model.findDescendants(type).models;
+        }
+
+        return model.findDescendantModels(type);
     }
 
     return {

@@ -12,4 +12,7 @@ If `adapt-contrib-pageLevelProgress` is enabled at course level (`course.json`) 
 
 ### Notes
 
-Some elements of drawerView.js are overridden to allow the position of the drawer to be programmatically specified (left or right).
+- The plugin requires a minimum Adapt framework version of 2.0.8 (this version introduced support for courses that do not use traditional menus).
+- Some elements of drawerView.js are overridden to allow the position of the drawer to be programmatically specified (left or right).
+- In most scenarios it is necessary to specify a redirection page (see example.json).
+- It may be necessary to remove (or hide) the back button (`.navigation-back-button`) to prevent Adapt attempting to navigate to `course` level.
