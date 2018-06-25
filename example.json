@@ -2,7 +2,7 @@
 
 // simple structure: all content objects are listed (except those excluded)
 
-"_drawerMenu": {
+"_toc": {
     "_excludeContentObjects": []
 }
 
@@ -15,7 +15,7 @@
 
 // custom structure: specify a hierarchy by defining groups of content objects
 
-"_drawerMenu": {
+"_toc": {
     "_grouping": {
         "_classes": "",
         "_items": [
@@ -58,12 +58,12 @@
     }
 }
 
-// _globals._menu
+// _globals._extensions
 
-"_drawerMenu": {
-    "navigationDrawerMenu": "Open drawer menu",
-    "drawerMenu": "Drawer menu",
-    "drawerMenuEnd": "You have reached the end of the drawer menu.",
-    "drawerMenuContentObject": "{{title}}. You have completed {{percentage}}%.",
+"_toc": {
+    "navigationToc": "Open table of contents",
+    "toc": "Table of contents",
+    "tocEnd": "You have reached the end of the table of contents.",
+    "tocContentObject": "{{title}}. You have completed {{percentage}}%.",
     "optionalContent": "Optional Content"
 }

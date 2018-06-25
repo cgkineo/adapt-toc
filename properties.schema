@@ -3,31 +3,31 @@
   "$schema": "http://json-schema.org/draft-04/schema",
   "id": "http://jsonschema.net",
   "globals": {
-    "navigationDrawerMenu": {
+    "navigationToc": {
       "type": "string",
       "required": true,
-      "default": "Open drawer menu",
+      "default": "Open table of contents",
       "inputType": "Text",
       "validators": [],
       "translatable": true
     },
-    "drawerMenu": {
+    "toc": {
       "type": "string",
       "required": true,
-      "default": "Drawer menu",
+      "default": "Table of contents",
       "inputType": "Text",
       "validators": [],
       "translatable": true
     },
-    "drawerMenuEnd": {
+    "tocEnd": {
       "type": "string",
       "required": true,
-      "default": "You have reached the end of the drawer menu.",
+      "default": "You have reached the end of the table of contents.",
       "inputType": "Text",
       "validators": [],
       "translatable": true
     },
-    "drawerMenuContentObject": {
+    "tocContentObject": {
       "type": "string",
       "required": true,
       "default": "{{title}}. You have completed {{percentage}}%.",
@@ -51,9 +51,9 @@
         "course": {
           "type": "object",
           "properties": {
-            "_drawerMenu": {
+            "_toc": {
               "type": "object",
-              "legend": "Drawer menu",
+              "legend": "TOC",
               "properties": {
                 "_excludeContentObjects": {
                   "type": "array",
@@ -63,7 +63,7 @@
                   "_items": {
                     "type": "string"
                   },
-                  "help": "Exclude zero or more content objects from the drawer menu by listing their IDs."
+                  "help": "Exclude zero or more content objects from the TOC by listing their IDs."
                 },
                 "_grouping": {
                   "type": "object",

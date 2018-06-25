@@ -1,4 +1,4 @@
-.drawer-menu-navigation {
+.toc-navigation {
   float: left;
 
   .dir-rtl & {
@@ -6,7 +6,7 @@
   }
 }
 
-.drawer.has-drawer-menu {
+.drawer.has-toc {
   .drawer-inner {
     border-left: 0;
     border-right: 5px solid @drawer-border-color;
@@ -17,23 +17,23 @@
     }
   }
 
-  .drawer-menu-group-item {
-    .drawer-menu-group {
-      .drawer-menu-group-item-title,
-      .drawer-menu-item-title-inner {
+  .toc-group-item {
+    .toc-group {
+      .toc-group-item-title,
+      .toc-item-title-inner {
         text-indent: 15px;
       }
     }
   }
 
-  .drawer-menu-group-item-title {
+  .toc-group-item-title {
     .button-text;
     padding: (@drawer-item-padding-top / 2) @drawer-item-padding-right (@drawer-item-padding-bottom / 2) @drawer-item-padding-left;
     background-color: darken(@drawer-item-color, 10%);
     color: @drawer-item-text-color;
   }
 
-  .drawer-menu-item {
+  .toc-item {
     display: block;
     width: 100%;
 
@@ -49,18 +49,18 @@
         color: @disabled-color-inverted;
       }
 
-      .drawer-menu-item-title {
+      .toc-item-title {
         background-color: @disabled-color;
         color: @disabled-color-inverted;
       }
 
-      .drawer-menu-item-indicator {
+      .toc-item-indicator {
         display: none;
       }
     }
   }
 
-  .drawer-menu-item-title {
+  .toc-item-title {
     .button-text;
     padding: @drawer-item-padding-top @drawer-item-padding-right @drawer-item-padding-bottom @drawer-item-padding-left;
     border-bottom: 1px solid @drawer-item-color;
@@ -78,18 +78,18 @@
         background-color: @drawer-item-color-hover;
         color: @drawer-item-text-color-hover;
 
-        .drawer-menu-item-indicator {
+        .toc-item-indicator {
           background-color: @drawer-progress-color-hover;
         }
 
-        .drawer-menu-item-indicator {
+        .toc-item-indicator {
           background-color: @drawer-item-color;
         }
       }
     }
   }
 
-  .drawer-menu-item-title-inner {
+  .toc-item-title-inner {
     float: left;
     width: 80%;
 
@@ -98,7 +98,7 @@
     }
   }
 
-  .drawer-menu-item-indicator {
+  .toc-item-indicator {
     width: 15%;
     height: 8px;
     margin-left: 4%;
@@ -115,15 +115,15 @@
     }
   }
 
-  .drawer-menu-item-indicator-bar {
+  .toc-item-indicator-bar {
     width: 0%;
     height: 10px;
     background-color: @drawer-progress-color;
     .transition-background-color;
   }
 
-  .drawer-menu-item-indicator-complete {
-    .drawer-menu-item-indicator-bar {
+  .toc-item-indicator-complete {
+    .toc-item-indicator-bar {
       width: 100%;
     }
   }

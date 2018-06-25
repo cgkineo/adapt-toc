@@ -1,6 +1,6 @@
-# adapt-drawerMenu
+# TOC
 
-This extension provides a drawer-based menu for Adapt as an alternative to (or complement) a traditional menu (for example `adapt-contrib-boxMenu`).
+This extension provides a drawer-based table of contents for Adapt as an alternative to (or complement) a traditional menu (for example `adapt-contrib-boxMenu`).
 
 There are two modes of operation. In the simple case all content objects are listed as links in the drawer. Any content objects that should not appear in the list can be excluded.
 
