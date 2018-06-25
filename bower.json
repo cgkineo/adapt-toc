@@ -1,16 +1,16 @@
 {
-  "name": "adapt-drawerMenu",
-  "version": "0.0.6",
+  "name": "adapt-toc",
+  "version": "0.0.7",
   "framework": ">=2.0.8",
-  "homepage": "https://github.com/cgkineo/adapt-drawer-menu",
-  "displayName" : "Drawer Menu",
-  "menu" : "drawerMenu",
-  "description": "A drawer-based menu",
-  "main": "/js/adapt-drawerMenu.js",
+  "homepage": "https://github.com/cgkineo/adapt-toc",
+  "displayName" : "TOC",
+  "extension" : "toc",
+  "description": "A drawer-based table of contents",
+  "main": "/js/adapt-toc.js",
   "keywords": [
     "adapt-plugin",
-    "adapt-menu"
+    "adapt-extension"
   ],
   "license": "GPLv3",
-  "targetAttribute": "_drawerMenu"
+  "targetAttribute": "_toc"
 }

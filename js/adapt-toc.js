@@ -5,9 +5,9 @@ define(function(require) {
     require('./helpers');
     require('./drawerViewOverrides');
 
-    var drawerMenuNavigationView = require('./drawerMenuNavigationView');
+    var tocNavigationView = require('./tocNavigationView');
 
     Adapt.on('adapt:start', function() {
-        new drawerMenuNavigationView();
+        new tocNavigationView();
     });
 });

@@ -10,7 +10,7 @@ define([
 
     var helpers = {
 
-        drawerMenu__isClickable: function(id, options) {
+        toc__isClickable: function(id, options) {
             var model = Adapt.findById(id);
 
             if (!model.get('_isLocked') && model.get('_isVisible') && Adapt.location._currentId != id) {
@@ -20,7 +20,7 @@ define([
             }
         },
 
-        drawerMenu__getTitle: function(id, options) {
+        toc__getTitle: function(id, options) {
             var model = Adapt.findById(id);
             var t = model.get('displayTitle');
             if (isStringEmpty(t)) t = model.get('title');
@@ -28,7 +28,7 @@ define([
             return t;
         },
 
-        drawerMenu__when: function(id, prop, options) {
+        toc__when: function(id, prop, options) {
             var model = Adapt.findById(id);
             if (model.get(prop)) {
                 return options.fn(this);
@@ -37,7 +37,7 @@ define([
             }
         },
 
-        drawerMenu__completionPercentage: function(id, options) {
+        toc__completionPercentage: function(id, options) {
             var model = Adapt.findById(id);
             
             var completionObject = completionCalculations.calculateCompletion(model);
@@ -50,7 +50,7 @@ define([
             return percentageComplete;
         },
 
-        drawerMenu__completionAria: function(id, options) {
+        toc__completionAria: function(id, options) {
             var model = Adapt.findById(id);
             
             var completionObject = completionCalculations.calculateCompletion(model);
@@ -61,14 +61,14 @@ define([
             var percentageComplete = Math.floor((completed / total)*100);
 
             var lockedStr = model.get('_isLocked') ? Adapt.course.get('_globals')._accessibility._ariaLabels.locked + '. ' : '';
-            var drawerMenuStrings = Adapt.course.get('_globals')._menu && Adapt.course.get('_globals')._menu._drawerMenu;
+            var tocStrings = Adapt.course.get('_globals')._extensions && Adapt.course.get('_globals')._extensions._toc;
             var template = lockedStr + '{{title}}. You have completed {{percentage}}%.';
 
-            if (drawerMenuStrings && drawerMenuStrings.drawerMenuContentObject) {
-                template = lockedStr + drawerMenuStrings.drawerMenuContentObject;
+            if (tocStrings && tocStrings.tocContentObject) {
+                template = lockedStr + tocStrings.tocContentObject;
             }
 
-            return template.replace('{{title}}', helpers.drawerMenu__getTitle(id)).replace('{{percentage}}', percentageComplete);
+            return template.replace('{{title}}', helpers.toc__getTitle(id)).replace('{{percentage}}', percentageComplete);
         }
     };
 

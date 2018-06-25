@@ -1,0 +1,29 @@
+<div role="list" class="toc-group-item-content-objects">
+    {{#each this}}
+        <div role="listitem" class="toc-item{{#toc__when this "_isLocked"}} locked{{/toc__when}}">
+            {{#toc__isClickable this}}
+                <button class="base toc-item-title clearfix" tabindex="0" role="button" data-toc-id="{{this}}" aria-label="{{toc__completionAria this}}">
+            {{else}}
+                <div class="toc-item-title disabled clearfix">
+                    <span class="aria-label prevent-default" tabindex="0" role="button">{{toc__completionAria this}}</span>
+            {{/toc__isClickable}}
+            <div class="toc-item-title-inner accessible-text-block h5">
+            {{{toc__getTitle this}}}
+            </div>
+            {{#toc__when this "_isOptional"}}
+                <div class="toc-item-optional-text">
+                {{_globals._extensions._toc.optionalContent}}
+                </div>
+            {{else}}
+                <div class="toc-item-indicator toc-item-indicator">
+                    <div class="toc-item-indicator-bar" style="width:{{toc__completionPercentage this}}%"></div>
+                </div>
+            {{/toc__when}}
+            {{#toc__isClickable this}}
+                </button>
+                {{else}}
+                </div>
+            {{/toc__isClickable}}
+        </div>
+    {{/each}}
+</div>
