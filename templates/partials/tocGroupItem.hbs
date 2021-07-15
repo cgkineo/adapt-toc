@@ -1,11 +1,17 @@
 <div role="listitem" class="toc-group-item {{_classes}}">
-	{{#if title}}
-		<div class="toc-group-item-title" {{{a11y_attrs_heading}}}>{{{title}}}</div>
-	{{/if}}
-	{{#if _contentObjects}}
-		{{> tocContentObjects _contentObjects}}
-	{{/if}}
-	{{#if _grouping}}
-		{{> tocGroup _grouping}}
-	{{/if}}
+
+  {{#if title}}
+  <div class="toc-group-item-title" {{{a11y_attrs_heading}}}>
+    {{{title}}}
+  </div>
+  {{/if}}
+
+  {{#if _contentObjects}}
+  {{> tocContentObjects _contentObjects}}
+  {{/if}}
+
+  {{#if _grouping}}
+  {{> tocGroup _grouping}}
+  {{/if}}
+
 </div>

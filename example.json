@@ -1,69 +1,65 @@
-// The following goes in course.json
+    // The following goes in course.json
 
-// simple structure: all content objects are listed (except those excluded)
+    // simple structure: all content objects are listed (except those excluded)
+    "_toc": {
+        "_excludeContentObjects": []
+    }
 
-"_toc": {
-    "_excludeContentObjects": []
-}
+    // in most scenarios it is necessary to specify a redirection page
+    "_start": {
+        "_isEnabled": true,
+        "_id": "co-05"
+    }
 
-// in most scenarios it is necessary to specify a redirection page
-
-"_start": {
-    "_isEnabled": true,
-    "_id": "co-05"
-}
-
-// custom structure: specify a hierarchy by defining groups of content objects
-
-"_toc": {
-    "_grouping": {
-        "_classes": "",
-        "_items": [
-            {
-                "_classes": "",
-                "_contentObjects": [
-                    "co-01"
-                ]
-            },
-            {
-                "title": "Learning material",
-                "_ariaLevel": 1,
-                "_classes": "",
-                "_contentObjects": [
-                    "co-05"
-                ],
-                "_grouping": {
+    // custom structure: specify a hierarchy by defining groups of content objects
+    "_toc": {
+        "_grouping": {
+            "_classes": "",
+            "_items": [
+                {
                     "_classes": "",
-                    "_items": [
-                        {
-                            "title": "Questionable material",
-                            "_ariaLevel": 2,
-                            "_classes": "",
-                            "_contentObjects": [
-                                "co-10"
-                            ]
-                        }
+                    "_contentObjects": [
+                        "co-01"
+                    ]
+                },
+                {
+                    "title": "Learning material",
+                    "_ariaLevel": 1,
+                    "_classes": "",
+                    "_contentObjects": [
+                        "co-05"
+                    ],
+                    "_grouping": {
+                        "_classes": "",
+                        "_items": [
+                            {
+                                "title": "Questionable material",
+                                "_ariaLevel": 2,
+                                "_classes": "",
+                                "_contentObjects": [
+                                    "co-10"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                {
+                    "title": "Assessment",
+                    "_ariaLevel": 1,
+                    "_classes": "",
+                    "_contentObjects": [
+                        "co-15"
                     ]
                 }
-            },
-            {
-                "title": "Assessment",
-                "_ariaLevel": 1,
-                "_classes": "",
-                "_contentObjects": [
-                    "co-15"
-                ]
-            }
-        ]
+            ]
+        }
     }
-}
 
-// _globals._extensions
-
-"_toc": {
-    "navigationToc": "Open table of contents",
-    "toc": "Table of contents",
-    "tocEnd": "You have reached the end of the table of contents.",
-    "tocContentObject": "{{title}}. You have completed {{percentage}}%.",
-    "optionalContent": "Optional Content"
-}
+    // _globals._extensions
+    "_toc": {
+        "navigationToc": "Open table of contents",
+        "toc": "Table of contents",
+        "tocEnd": "You have reached the end of the table of contents.",
+        "tocContentObject": "{{title}}. You have completed {{percentage}}%.",
+        "optionalContent": "Optional Content"
+    }
