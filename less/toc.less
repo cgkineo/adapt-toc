@@ -1,130 +1,167 @@
+// Nav button
+// --------------------------------------------------
 .toc-navigation {
-  float: left;
+  .u-float-left;
+}
 
-  .dir-rtl & {
-    float: right;
+.toc-navigation .icon {
+  .icon-menu;
+}
+
+// Group items indentation
+// --------------------------------------------------
+.toc__group-item .toc__group {
+  .toc__group-item-title,
+  .toc__item-title-inner {
+    text-indent: 1rem;
   }
 }
 
-.drawer.has-toc {
-  .drawer-inner {
-    border-left: 0;
-    border-right: 5px solid @drawer-border-color;
-
-    .dir-rtl & {
-      border-right: 0;
-      border-left: 5px solid @drawer-border-color;
-    }
+// Item locked and optional states
+// --------------------------------------------------
+.toc {
+  &__item.is-locked &__item-icon {
+    width: 2rem;
+    margin: 0 calc(~'12.5% - 1rem');
   }
 
-  .toc-group-item {
-    .toc-group {
-      .toc-group-item-title,
-      .toc-item-title-inner {
-        text-indent: 15px;
-      }
-    }
+  &__item.is-locked &__item-icon .icon {
+    .icon-padlock-locked;
   }
 
-  .toc-group-item-title {
-    .button-text;
-    padding: (@drawer-item-padding-top / 2) @drawer-item-padding-right (@drawer-item-padding-bottom / 2) @drawer-item-padding-left;
-    background-color: darken(@drawer-item-color, 10%);
-    color: @drawer-item-text-color;
+  &__item.is-locked .toc__indicator {
+    .u-display-none;
   }
 
-  .toc-item {
-    display: block;
-    width: 100%;
+  &__item-optional-text {
+    font-size: @body-size * .75%;
+  }
+}
 
-    &.locked {
-      position: relative;
-
-      &:before {
-        .icon;
-        content: "\e631";
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        color: @disabled-color-inverted;
-      }
-
-      .toc-item-title {
-        background-color: @disabled-color;
-        color: @disabled-color-inverted;
-      }
-
-      .toc-item-indicator {
-        display: none;
-      }
-    }
+// duplicate of pageLevelProgress.less
+// --------------------------------------------------
+.drawer .toc {
+  &__item-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .toc-item-title {
-    .button-text;
-    padding: @drawer-item-padding-top @drawer-item-padding-right @drawer-item-padding-bottom @drawer-item-padding-left;
-    border-bottom: 1px solid @drawer-item-color;
-    color: @drawer-item-text-color;
-    text-decoration: none;
-    width: 100%;
-    .transition-background-color;
-
-    &.disabled {
-      box-sizing: border-box;
-    }
-
-    .no-touch &:hover {
-      &:not(.disabled) {
-        background-color: @drawer-item-color-hover;
-        color: @drawer-item-text-color-hover;
-
-        .toc-item-indicator {
-          background-color: @drawer-progress-color-hover;
-        }
-
-        .toc-item-indicator {
-          background-color: @drawer-item-color;
-        }
-      }
-    }
+  &__item-title {
+    width: 75%;
   }
 
-  .toc-item-title-inner {
-    float: left;
-    width: 80%;
-
-    .dir-rtl & {
-      float: right;
-    }
+  &__indicator {
+    margin: 0 calc(~'12.5% - 1rem');
   }
 
-  .toc-item-indicator {
-    width: 15%;
-    height: 8px;
-    margin-left: 4%;
-    display: inline-block;
-    border-radius: 5px;
+  &__item-optional {
+    width: 5rem;
+  }
+
+  &__item-optional-inner {
+    font-size: 0.75rem;
+  }
+}
+
+// duplicate of pageLevelProgressIndicator.less
+// --------------------------------------------------
+.toc {
+  &__indicator {
+    width: 2rem;
+    font-size: 1rem;
+    border: 0.0625rem solid @black;
+    border-radius: 50px;
     overflow: hidden;
-    background-color: transparent;
-    border: 1px solid @drawer-progress-border-color;
-    .transition-background-color;
-
-    .dir-rtl & {
-      margin-left: inherit;
-      margin-right: 4%;
-    }
   }
 
-  .toc-item-indicator-bar {
-    width: 0%;
-    height: 10px;
-    background-color: @drawer-progress-color;
-    .transition-background-color;
+  &__indicator-inner {
+    position: relative;
+    height: @icon-size / 4;
   }
 
-  .toc-item-indicator-complete {
-    .toc-item-indicator-bar {
-      width: 100%;
+  &__indicator-bar {
+    height: inherit;
+    min-width: 10%;
+    background-color: @black;
+  }
+}
+
+// --------------------------------------------------
+// THEME
+// --------------------------------------------------
+
+.toc {
+  &__group-item-title {
+    .button-text;
+
+    padding: @item-padding;
+    background-color: @drawer-item;
+    border-bottom: 1px solid @drawer-item-hover;
+    color: @drawer-item-inverted;
+  }
+}
+
+// ToC progress lozenge
+// --------------------------------------------------
+.toc {
+  &__indicator {
+    border-color: @progress-border;
+  }
+
+  &__indicator-inner {
+    background-color: @progress-inverted;
+  }
+
+  &__indicator-bar {
+    background-color: @progress;
+    .transition(width @progress-duration linear);
+  }
+}
+
+// Drawer overrides
+// --------------------------------------------------
+.toc__item-btn:not(.is-disabled) {
+  .toc__indicator {
+    border-color: @drawer-progress-border;
+  }
+
+  .toc__indicator-inner {
+    background-color: @drawer-progress-inverted;
+  }
+
+  .toc__indicator-bar {
+    background-color: @drawer-progress;
+  }
+
+  .no-touch &:hover {
+    .toc__indicator {
+      border-color: @drawer-progress-border-hover;
+      .transition(border-color @duration ease-in);
     }
+
+    .toc__indicator-inner {
+      background-color: @drawer-progress-inverted-hover;
+      .transition(background-color @duration ease-in);
+    }
+
+    .toc__indicator-bar {
+      background-color: @drawer-progress-hover;
+      .transition(background-color @duration ease-in);
+    }
+  }
+}
+
+.toc__item-btn.is-disabled {
+  .toc__indicator {
+    border-color: @disabled-inverted;
+  }
+
+  .toc__indicator-inner {
+    background-color: @disabled;
+  }
+
+  .toc__indicator-bar {
+    background-color: @disabled-inverted;
   }
 }

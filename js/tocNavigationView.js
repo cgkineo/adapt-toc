@@ -1,15 +1,13 @@
-define(function(require) {
-
-  var Adapt = require('coreJS/adapt');
-  var Backbone = require('backbone');
-
-  var TocView = require('./tocView');
+define([
+  'core/js/adapt',
+  './tocView'
+], function(Adapt, TocView) {
 
   var TocNavigationView = Backbone.View.extend({
 
     tagName: 'button',
 
-    className: 'base icon icon-home toc-navigation',
+    className: 'btn-icon nav__btn nav__toc-btn js-nav-toc-btn toc-navigation',
 
     initialize: function() {
       this.$el.attr('role', 'button');
@@ -29,7 +27,7 @@ define(function(require) {
 
     render: function() {
       var template = Handlebars.templates.tocNavigation;
-      $('.js-nav-back-btn').after(this.$el.html(template()));
+      $('.js-nav-back-btn').before(this.$el.html(template()));
       return this;
     },
 

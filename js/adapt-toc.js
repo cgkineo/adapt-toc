@@ -1,11 +1,9 @@
-define(function(require) {
-
-  var Adapt = require('coreJS/adapt');
-
-  require('./helpers');
-  require('./drawerViewOverrides');
-
-  var tocNavigationView = require('./tocNavigationView');
+define([
+  'core/js/adapt',
+  './helpers',
+  './drawerViewOverrides',
+  './tocNavigationView'
+], function(Adapt, Helpers, drawerViewOverrides, tocNavigationView) {
 
   Adapt.on('adapt:start', function() {
     new tocNavigationView();

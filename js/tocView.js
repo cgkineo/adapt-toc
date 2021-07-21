@@ -1,7 +1,6 @@
-define(function(require) {
-
-  var Adapt = require('coreJS/adapt');
-  var Backbone = require('backbone');
+define([
+  'core/js/adapt'
+], function(Adapt) {
 
   var TocView = Backbone.View.extend({
 
@@ -16,11 +15,15 @@ define(function(require) {
     },
 
     events: {
-      'click .toc-item button': 'scrollToPageElement'
+      'click .toc__item button': 'scrollToPageElement'
     },
 
     scrollToPageElement: function(event) {
       if (event && event.preventDefault) event.preventDefault();
+
+      var $target = $(event.currentTarget);
+      if ($target.is('.is-disabled')) return;
+
       var selector = '.' + $(event.currentTarget).attr('data-toc-id');
       Adapt.once('drawer:closed', function() {
         Adapt.navigateToElement(selector, { duration:400 });

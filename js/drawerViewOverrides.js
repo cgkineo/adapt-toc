@@ -1,6 +1,6 @@
 define([
-  'coreJS/adapt',
-  'coreViews/drawerView'
+  'core/js/adapt',
+  'core/js/views/drawerView'
 ], function(Adapt, DrawerView) {
 
   var setupEventListeners = DrawerView.prototype.setupEventListeners;
@@ -45,7 +45,7 @@ define([
   // we need to add some behaviour to one branch of an if statement in this method
   // rather than override the whole method we can shift this code to the head without side effects
   DrawerView.prototype.showDrawer = function(options) {
-    this.$el.removeClass('display-none');
+    this.$el.removeClass('u-display-none');
     var drawerWidth = this.$el.width();
     var direction={};
     direction[this.drawerDir]=-drawerWidth;

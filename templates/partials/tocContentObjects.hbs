@@ -1,36 +1,49 @@
-<div role="list" class="toc-group-item-content-objects">
+{{! make the _globals object in course.json available to this template}}
+{{import_globals}}
+
+<div role="list" class="toc__group-item-content-objects">
 
   {{#each this}}
-  <div role="listitem" class="toc-item{{#toc__when this "_isLocked"}} locked{{/toc__when}}">
+  <div role="listitem" class="toc__item drawer__item{{#toc__when this "_isLocked"}} is-locked{{/toc__when}}">
 
-    {{#toc__isClickable this}}
-    <button class="base toc-item-title clearfix" tabindex="0" role="button" data-toc-id="{{this}}" aria-label="{{toc__completionAria this}}">
-    {{else}}
-    <div class="toc-item-title disabled clearfix">
-      <span class="aria-label prevent-default" tabindex="0" role="button">{{toc__completionAria this}}</span>
-    {{/toc__isClickable}}
+    <button role="button" class="toc__item-btn drawer__item-btn{{#toc__isClickable this}}{{else}} is-disabled{{/toc__isClickable}}" tabindex="0" data-toc-id="{{this}}" aria-label="{{toc__completionAria this}}">
 
-      <div class="toc-item-title-inner accessible-text-block h5">
-        {{{toc__getTitle this}}}
+      {{#toc__isClickable this}}
+      {{else}}
+      <span role="button" class="aria-label prevent-default" tabindex="0">
+        {{toc__completionAria this}}
+      </span>
+      {{/toc__isClickable}}
+
+      <div class="toc__item-title drawer__item-title">
+        <div class="toc__item-title-inner drawer__item-title-inner">
+          {{{toc__getTitle this}}}
+        </div>
       </div>
 
-      {{#toc__when this "_isOptional"}}
-      <div class="toc-item-optional-text">
-        {{_globals._extensions._toc.optionalContent}}
+      {{#toc__when this "_isLocked"}}
+      <div class="toc__item-icon">
+        <div class="icon"></div>
       </div>
       {{else}}
-      <div class="toc-item-indicator toc-item-indicator">
-        <div class="toc-item-indicator-bar" style="width:{{toc__completionPercentage this}}%"></div>
+      {{#toc__when this "_isOptional"}}
+      <div class="toc__item-optional-text">
+        <div class="toc__item-optional-text-inner">
+          {{@root._globals._extensions._toc.optionalContent}}
+        </div>
+      </div>
+      {{else}}
+      <div class="toc__indicator">
+        <div class="toc__indicator-inner">
+          <div class="toc__indicator-bar" style="width: {{toc__completionPercentage this}}%"></div>
+        </div>
       </div>
       {{/toc__when}}
+      {{/toc__when}}
 
-    {{#toc__isClickable this}}
     </button>
-    {{else}}
-    </div>
-    {{/toc__isClickable}}
 
-    </div>
+  </div>
   {{/each}}
 
 </div>

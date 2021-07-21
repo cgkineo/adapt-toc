@@ -1,6 +1,6 @@
 define([
   'handlebars',
-  'coreJS/adapt',
+  'core/js/adapt',
   './completionCalculations'
 ], function(Handlebars, Adapt, completionCalculations){
 
@@ -56,7 +56,7 @@ define([
       var completionObject = completionCalculations.calculateCompletion(model);
 
       var completed = completionObject.nonAssessmentCompleted + completionObject.assessmentCompleted + completionObject.subProgressCompleted;
-      var total  = completionObject.nonAssessmentTotal + completionObject.assessmentTotal + completionObject.subProgressTotal;
+      var total = completionObject.nonAssessmentTotal + completionObject.assessmentTotal + completionObject.subProgressTotal;
 
       var percentageComplete = Math.floor((completed / total)*100);
 

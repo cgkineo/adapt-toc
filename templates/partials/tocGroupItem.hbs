@@ -1,8 +1,10 @@
-<div role="listitem" class="toc-group-item {{_classes}}">
+<div role="listitem" class="toc__group-item{{#if _classes}} {{_classes}}{{/if}}">
 
   {{#if title}}
-  <div class="toc-group-item-title" {{{a11y_attrs_heading}}}>
-    {{{title}}}
+  <div class="toc__group-item-title" {{{a11y_attrs_heading}}}>
+    <div class="toc__group-item-title-inner">
+      {{{title}}}
+    </div>
   </div>
   {{/if}}
 

@@ -1,4 +1,4 @@
-<div role="list" class="toc-group {{_classes}}">
+<div role="list" class="toc__group{{#if _classes}} {{_classes}}{{/if}}">
   {{#each _items}}
   {{> tocGroupItem this}}
   {{/each}}
