@@ -22,6 +22,14 @@
         </div>
       </div>
 
+        {{#toc__exists this "subtitle"}}
+          <div class="toc__item-subtitle drawer__item-title">
+            <div class="toc__item-subtitle-inner drawer__item-title-inner">
+              {{{toc__getSubtitle this}}}
+            </div>
+          </div>
+        {{/toc__exists}}
+
         {{#toc__exists this "body"}}
           <div class="toc__item-body drawer__item-body">
             <div class="toc__item-body-inner drawer__item-body-inner">

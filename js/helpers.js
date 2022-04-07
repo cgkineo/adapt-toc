@@ -28,6 +28,12 @@ define([
       return t;
     },
 
+    toc__getSubtitle: function(id, options) {
+      var model = Adapt.findById(id);
+      var t = model.get('subtitle');
+      return t;
+    },
+
     toc__getBody: function(id, options) {
       var model = Adapt.findById(id);
       var t = model.get('body');
