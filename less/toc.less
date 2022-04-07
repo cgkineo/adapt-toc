@@ -47,7 +47,8 @@
     justify-content: center;
   }
 
-  &__item-title {
+  &__item-title,
+  &__item-body {
     width: 75%;
   }
 
@@ -92,6 +93,12 @@
 // --------------------------------------------------
 
 .toc {
+  &__item-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+  }
+
   &__group-item-title {
     .button-text;
 
