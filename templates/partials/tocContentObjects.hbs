@@ -15,12 +15,29 @@
       </span>
       {{/toc__isClickable}}
 
+      <div class="toc__item-content">
       <div class="toc__item-title drawer__item-title">
         <div class="toc__item-title-inner drawer__item-title-inner">
           {{{toc__getTitle this}}}
         </div>
       </div>
 
+        {{#toc__exists this "subtitle"}}
+          <div class="toc__item-subtitle drawer__item-title">
+            <div class="toc__item-subtitle-inner drawer__item-title-inner">
+              {{{toc__getSubtitle this}}}
+            </div>
+          </div>
+        {{/toc__exists}}
+
+        {{#toc__exists this "body"}}
+          <div class="toc__item-body drawer__item-body">
+            <div class="toc__item-body-inner drawer__item-body-inner">
+              {{{toc__getBody this}}}
+            </div>
+          </div>
+        {{/toc__exists}}
+      </div>
       {{#toc__when this "_isLocked"}}
       <div class="toc__item-icon">
         <div class="icon"></div>
