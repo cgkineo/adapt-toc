@@ -54,8 +54,6 @@ List of content object ids to be included in the groups item list e.g. ["co-100"
 - It may be necessary to remove (or hide) the back button (`.navigation-back-button`) to prevent Adapt attempting to navigate to `course` level.
 
 ----------------------------
-**Version number:**  0.0.8<br/>
-**Framework versions:**  5+<br/>
 **Author / maintainer:** Kineo<br/>
 **Accessibility support:** TBC<br/>
 **RTL support:** TBC<br/>
