@@ -1,11 +1,11 @@
 {
   "name": "adapt-toc",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "framework": ">=5",
   "homepage": "https://github.com/cgkineo/adapt-toc",
   "issues": "https://github.com/cgkineo/adapt-toc/issues",
-  "extension" : "toc",
-  "displayName" : "Table of Contents",
+  "extension": "toc",
+  "displayName": "Table of Contents",
   "description": "A drawer-based table of contents",
   "main": "/js/adapt-toc.js",
   "keywords": [
