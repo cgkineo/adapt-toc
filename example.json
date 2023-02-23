@@ -4,7 +4,18 @@
     "_toc": {
         "_excludeContentObjects": []
     }
-
+	
+    // hierarchical structure: content objects are grouped automatically
+    // _autoGrouping (if _enabled) reflects the menu, page, article, block, component structure of adapt courses
+    // _maxLevel defines how deep the nested autoGroups should be
+    // 0 => menu/page; 1 => article; 2 => block; 3 => component
+    "_toc": {
+        "_autoGrouping": {
+            "_enabled": true,
+            "_maxLevel": 0
+        }
+    }
+	
     // in most scenarios it is necessary to specify a redirection page
     "_start": {
         "_isEnabled": true,

@@ -74,7 +74,30 @@
                     "mode": "json"
                   },
                   "help": "Configure the visual organisation of content objects (see example.json)."
-                }
+                },
+				"_autoGrouping": {
+                  "type": "object",
+				  "required": false,
+				  "legend": "Auto-Grouping",
+                  "properties": {
+				    "_enabled": {
+					  "type": "boolean",
+				      "required": true,
+					  "default": false,
+					  "title": "Is Enabled",
+					  "inputType": "Checkbox",
+					  "help": "If this option is enabled the ToC will reflect the menu, page, article, block, component structure of the course."
+					},
+					"_maxLevel": {
+					  "type": "integer",
+				      "required": true,
+					  "default": 0,
+					  "title": "Maximum Nesting Level",
+					  "inputType": {"type": "Select", "options":[0, 1, 2, 3]},
+					  "help": "This option defines how deep the nested autoGroups should be: 0 => menu/page; 1 => article; 2 => block; 3 => component."
+					}
+				  }
+				}
               }
             }
           }
