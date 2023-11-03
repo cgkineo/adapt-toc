@@ -1,9 +1,8 @@
 define([
   'core/js/adapt',
   './helpers',
-  './drawerViewOverrides',
   './tocNavigationView'
-], function(Adapt, Helpers, drawerViewOverrides, tocNavigationView) {
+], function(Adapt, Helpers, tocNavigationView) {
 
   Adapt.on('adapt:start', function() {
     new tocNavigationView();

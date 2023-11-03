@@ -1,7 +1,7 @@
 {
   "name": "adapt-toc",
-  "version": "1.0.0",
-  "framework": ">=5",
+  "version": "1.0.1",
+  "framework": ">=5.22.9",
   "homepage": "https://github.com/cgkineo/adapt-toc",
   "issues": "https://github.com/cgkineo/adapt-toc/issues",
   "extension": "toc",

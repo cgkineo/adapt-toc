@@ -16,11 +16,45 @@ If `adapt-contrib-pageLevelProgress` is enabled at course level (`course.json`) 
 
 ## Attributes
 
+Add to _course.json_ under _\_globals.\_extensions_.
+
+#### \_toc_ (object):
+The Table of Contents object
+
+##### \navigationToc (string):
+Aria label for the navigation button
+
+##### \toc (string):
+Aria label to indicate the beginning of the table of contents
+
+##### \tocEnd (string):
+Aria label to indicate the end of the table of contents
+
+##### \tocContentObject (string):
+Aria label to indicate completion
+
+##### \optionalContent (string):
+Label to indicate optional content
+
+##### \_navTooltip (object):
+The tooltip object. Used when tooltips are enabled globally
+
+###### \_isEnabled (boolean):
+Enables tooltips on the button
+
+###### \text (string):
+The text of the tooltip
+
+Add the following directly to _course.json_.
+
 ### *course.json*
 The following attributes, set within *course.json*, configure the defaults for **ToC**.
 
 #### \_toc (object):
 The toc object contains the following settings:
+
+##### \_drawerPosition (string);
+The position that the button appears in the drawer. Position options include 'auto', 'left', and 'right'. Defaults to 'auto'
 
 ##### \_excludeContentObjects (array);
 Optional list of content object ids to be excluded from the toc list e.g. ["co-100"] or ["co-100", "co-200"]
@@ -48,13 +82,5 @@ List of content object ids to be included in the groups item list e.g. ["co-100"
 
 ### Notes
 
-- The plugin requires a minimum Adapt framework version of `2.0.8` (this version introduced support for courses that do not use traditional menus).
-- Some elements of `drawerView.js` are overridden to allow the position of the drawer to be programmatically specified (left or right).
 - In most scenarios it is necessary to specify a start page (see `example.json`).
 - It may be necessary to remove (or hide) the back button (`.navigation-back-button`) to prevent Adapt attempting to navigate to `course` level.
-
-----------------------------
-**Author / maintainer:** Kineo<br/>
-**Accessibility support:** TBC<br/>
-**RTL support:** TBC<br/>
-**Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, IE11, Safari 14 for macOS/iOS/iPadOS, Opera<br/>

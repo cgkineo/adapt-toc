@@ -42,6 +42,28 @@
       "inputType": "Text",
       "validators": [],
       "translatable": true
+    },
+    "_navTooltip": {
+      "type": "object",
+      "title": "Table of Contents navigation tooltip",
+      "properties": {
+        "_isEnabled": {
+          "type": "boolean",
+          "default": true,
+          "title": "Enable tooltip for navigation button",
+          "inputType": "Checkbox",
+          "validators": []
+        },
+        "text": {
+          "type": "string",
+          "title": "",
+          "default": "Table of Contents",
+          "help": "The tooltip text to display on hover over this item",
+          "inputType": "Text",
+          "validators": [],
+          "translatable": true
+        }
+      }
     }
   },
   "properties": {
@@ -55,6 +77,15 @@
               "type": "object",
               "legend": "TOC",
               "properties": {
+                "_drawerPosition": {
+                  "type": "string",
+                  "required": true,
+                  "default": "Drawer position",
+                  "inputType": "Text",
+                  "validators": [],
+                  "translatable": false,
+                  "help": "The position that the button appears in the drawer. Position options include 'auto', 'left', and 'right'. Defaults to 'auto'"
+                },
                 "_excludeContentObjects": {
                   "type": "array",
                   "default": [],

@@ -43,12 +43,10 @@ define([
     },
 
     onDrawerClosed: function() {
-      Adapt.trigger('drawer:setDrawerDir');
       $('.drawer').removeClass('has-toc');
     },
 
     remove: function() {
-      Adapt.trigger('drawer:setDrawerDir');
       Backbone.View.prototype.remove.apply(this, arguments);
     },
 

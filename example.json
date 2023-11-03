@@ -13,6 +13,7 @@
 
     // custom structure: specify a hierarchy by defining groups of content objects
     "_toc": {
+        "_drawerPosition": "auto",
         "_grouping": {
             "_classes": "",
             "_items": [
@@ -61,5 +62,9 @@
         "toc": "Table of contents",
         "tocEnd": "You have reached the end of the table of contents.",
         "tocContentObject": "{{title}}. You have completed {{percentage}}%.",
-        "optionalContent": "Optional Content"
+        "optionalContent": "Optional Content",
+        "_navTooltip": {
+          "_isEnabled": true,
+          "text": "Table of contents"
+        }
     }
