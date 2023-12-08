@@ -71,7 +71,7 @@ class Completion extends Backbone.Controller {
     completion.assessmentTotal = 0;
     completion.assessmentCompleted = 0;
     perform(contentObjectModel);
-    if (setGlobal) Object.assign(Adapt.completion, completion);
+    if (setGlobal) Object.assign(Adapt.tocCompletion, completion);
     return completion;
   }
 
@@ -138,4 +138,4 @@ class Completion extends Backbone.Controller {
 
 }
 
-export default (Adapt.completion = new Completion());
+export default (Adapt.tocCompletion = new Completion());
