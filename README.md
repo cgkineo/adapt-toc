@@ -72,7 +72,7 @@ The position that the button appears in the drawer. Position options include `au
 
 #### **\_excludeContentObjects** (array)
 
-Optional list of content object `_id` values to be *excluded* from the ToC list. For example, `["co-100"]` or `["co-100", "co-200"]`. To exclude the menu link, use 'course'.
+Optional list of content object `_id` values to be *excluded* from the ToC list. For example, `["co-100"]` or `["co-100", "co-200"]`. To exclude the menu link, use `course`.
 
 #### **\_grouping** (object)
 
