@@ -2,7 +2,7 @@
 
 This extension provides a drawer-based table of contents for Adapt as an alternative to (or to complement) a traditional menu (e.g. `adapt-contrib-boxMenu`).
 
-There are two modes of operation: simple and custom:
+There are two modes of operation: simple and custom.
 
 - In the *simple* case, all content objects are listed as links in the drawer. Any content objects that should not appear in the list can be excluded.
 
