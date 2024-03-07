@@ -76,6 +76,10 @@
     border: 0.0625rem solid @black;
     border-radius: 50px;
     overflow: hidden;
+
+    .drawer & {
+      margin: 0;
+    }
   }
 
   &__indicator-inner {
@@ -115,6 +119,7 @@
 // --------------------------------------------------
 .toc {
   &__indicator {
+    min-width: 2rem;
     border-color: @progress-border;
   }
 
