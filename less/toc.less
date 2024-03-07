@@ -69,6 +69,18 @@
 
 // duplicate of pageLevelProgressIndicator.less
 // --------------------------------------------------
+.drawer .toc {
+  &__item-title,
+  &__item-subtitle,
+  &__item-body {
+    width: 100%;
+  }
+
+  &__indicator {
+    margin-right: 0;
+  }
+}
+
 .toc {
   &__indicator {
     width: 2rem;
@@ -76,10 +88,6 @@
     border: 0.0625rem solid @black;
     border-radius: 50px;
     overflow: hidden;
-
-    .drawer & {
-      margin: 0;
-    }
   }
 
   &__indicator-inner {
