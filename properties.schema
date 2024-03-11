@@ -77,6 +77,13 @@
               "type": "object",
               "legend": "TOC",
               "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "default": true,
+                  "title": "Enable TOC",
+                  "inputType": "Checkbox",
+                  "validators": []
+                },
                 "_drawerPosition": {
                   "type": "string",
                   "required": true,
