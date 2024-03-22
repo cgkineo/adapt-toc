@@ -66,6 +66,10 @@ The following attributes, set within *course.json*, configure the defaults for *
 
 The `_toc` object contains the following settings:
 
+#### **\_isEnabled** (boolean)
+
+Turns on and off the **ToC** extension.
+
 #### **\_drawerPosition** (string)
 
 The position that the button appears in the drawer. Position options include `auto`, `left`, and `right`. Defaults to `auto`

@@ -17,6 +17,9 @@ define([
     },
 
     initialize: function() {
+      var cfg = Adapt.course.get('_toc') || {};
+      if (!cfg || cfg._isEnabled === false) return;
+
       this.$el.attr('role', 'button');
       this.ariaText = '';
 
