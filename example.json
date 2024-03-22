@@ -13,6 +13,7 @@
 
     // custom structure: specify a hierarchy by defining groups of content objects
     "_toc": {
+        "_isEnabled": true,
         "_drawerPosition": "auto",
         "_grouping": {
             "_classes": "",
