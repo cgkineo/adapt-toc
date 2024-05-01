@@ -6,7 +6,7 @@
   {{#each this}}
   <div role="listitem" class="toc__item drawer__item{{#toc__when this "_isLocked"}} is-locked{{/toc__when}}">
 
-    <button role="button" class="toc__item-btn drawer__item-btn{{#toc__isClickable this}}{{else}} is-disabled{{/toc__isClickable}}" tabindex="0" data-toc-id="{{this}}" aria-label="{{toc__completionAria this}}">
+    <button role="button" class="toc__item-btn drawer__item-btn{{#toc__isClickable this}}{{else}} is-disabled{{/toc__isClickable}}{{#toc__isSelected this}} is-selected{{else}}{{/toc__isSelected}}" tabindex="0" data-toc-id="{{this}}" aria-label="{{toc__completionAria this}}">
 
       {{#toc__isClickable this}}
       {{else}}

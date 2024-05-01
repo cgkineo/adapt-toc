@@ -20,6 +20,16 @@ define([
       }
     },
 
+    toc__isSelected: function(id, options) {
+      var model = Adapt.findById(id);
+
+      const isSelected = (model.get('_isVisible') && Adapt.location._currentId == id);
+      if (isSelected) {
+        return options.fn(this);
+      }
+      return options.inverse(this);
+    },
+
     toc__getTitle: function(id, options) {
       var model = Adapt.findById(id);
       var t = model.get('displayTitle');
