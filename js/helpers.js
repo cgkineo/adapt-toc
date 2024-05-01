@@ -23,11 +23,11 @@ define([
     toc__isSelected: function(id, options) {
       var model = Adapt.findById(id);
 
-      if (model.get('_isVisible') && Adapt.location._currentId == id) {
+      const isSelected = (model.get('_isVisible') && Adapt.location._currentId == id);
+      if (isSelected) {
         return options.fn(this);
-      } else {
-        return options.inverse(this);
       }
+      return options.inverse(this);
     },
 
     toc__getTitle: function(id, options) {
