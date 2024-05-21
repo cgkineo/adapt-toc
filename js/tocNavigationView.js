@@ -51,7 +51,7 @@ define([
       var cfg = Adapt.course.get('_toc') || {}
       var position = cfg._drawerPosition || 'auto'
       // here is where you might customise what toc renders if so desired
-      Adapt.drawer.triggerCustomView(new TocView({cfg}).$el, false, position);
+      Adapt.drawer.openCustomView(new TocView({cfg}).$el, false, position);
     }
 
   });
