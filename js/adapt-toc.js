@@ -8,21 +8,32 @@ import TocNavigationButtonView from './TocNavigationButtonView';
 class Toc extends Backbone.Controller {
 
   initialize() {
-    this.listenTo(Adapt, 'adapt:start', this.onAdaptStart);
+    this.listenTo(Adapt, 'app:dataReady', this.onDataReady);
   }
 
-  onAdaptStart() {
+  onDataReady() {
     const config = Adapt.course.get('_toc');
     if (config?._isEnabled === false) return;
 
-    this.renderNavigationButton();
+    this.listenTo(Adapt, {
+      remove: this.removeNavigationButton,
+      'router:menu router:page': this.renderNavigationButton
+    });
   }
 
   static get globalsConfig() {
     return Adapt.course.get('_globals')?._extensions?._toc;
   }
 
+  removeNavigationButton() {
+    if (!this._navigationButtonView) return;
+    navigation.removeButton(this._navigationButtonView);
+    this._navigationButtonView = null;
+  }
+
   renderNavigationButton() {
+    this.removeNavigationButton();
+
     const config = Adapt.course.get('_toc') || {};
     const globalsConfig = Toc.globalsConfig ?? {};
     const {
@@ -37,7 +48,7 @@ class Toc extends Backbone.Controller {
       _id: 'toc',
       _order: _navOrder,
       _showLabel,
-      _classes: 'btn-icon nav__btn nav__toc-btn toc-navigation',
+      _classes: 'nav__toc-btn toc-navigation',
       _iconClasses: 'icon-menu',
       _role: 'button',
       ariaLabel: navigationToc,
@@ -46,10 +57,11 @@ class Toc extends Backbone.Controller {
       _drawerPosition: config._drawerPosition || 'auto'
     });
 
-    navigation.addButton(new TocNavigationButtonView({
+    this._navigationButtonView = new TocNavigationButtonView({
       model,
       tocConfig: config
-    }));
+    });
+    navigation.addButton(this._navigationButtonView);
   }
 
 }
