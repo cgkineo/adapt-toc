@@ -49,7 +49,7 @@ class Toc extends Backbone.Controller {
       _order: _navOrder,
       _showLabel,
       _classes: 'nav__toc-btn toc-navigation',
-      _iconClasses: 'icon-menu',
+      _iconClasses: config._iconClasses || 'icon-menu',
       _role: 'button',
       ariaLabel: navigationToc,
       text: navLabel || navigationToc,

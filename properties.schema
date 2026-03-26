@@ -112,6 +112,15 @@
                   "inputType": "Checkbox",
                   "validators": []
                 },
+                "_iconClasses": {
+                  "type": "string",
+                  "required": false,
+                  "default": "icon-menu",
+                  "title": "Navigation button icon",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "CSS class for the navigation button icon. Defaults to 'icon-menu'."
+                },
                 "_drawerPosition": {
                   "type": "string",
                   "required": true,
