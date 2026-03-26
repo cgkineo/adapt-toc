@@ -14,7 +14,6 @@
     // custom structure: specify a hierarchy by defining groups of content objects
     "_toc": {
         "_isEnabled": true,
-        "_iconClasses": "icon-menu",
         "_drawerPosition": "auto",
         "_grouping": {
             "_classes": "",
@@ -67,6 +66,7 @@
         "optionalContent": "Optional Content",
         "_navOrder": 0,
         "_showLabel": true,
+        "_iconClasses": "icon-menu",
         "navLabel": "",
         "_navTooltip": {
           "_isEnabled": true,

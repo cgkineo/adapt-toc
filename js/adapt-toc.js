@@ -39,6 +39,7 @@ class Toc extends Backbone.Controller {
     const {
       _navOrder = 0,
       _showLabel = null,
+      _iconClasses = 'icon-menu',
       navLabel = '',
       navigationToc = 'Open table of contents',
       _navTooltip = {}
@@ -49,7 +50,7 @@ class Toc extends Backbone.Controller {
       _order: _navOrder,
       _showLabel,
       _classes: 'nav__toc-btn toc-navigation',
-      _iconClasses: config._iconClasses || 'icon-menu',
+      _iconClasses,
       _role: 'button',
       ariaLabel: navigationToc,
       text: navLabel || navigationToc,

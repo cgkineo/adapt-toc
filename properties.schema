@@ -71,6 +71,15 @@
       "translatable": true,
       "help": "The label for the navigation button. Defaults to the 'navigationToc' aria label if empty."
     },
+    "_iconClasses": {
+      "type": "string",
+      "required": false,
+      "default": "icon-menu",
+      "title": "Navigation button icon",
+      "inputType": "Text",
+      "validators": [],
+      "help": "CSS class for the navigation button icon. Defaults to 'icon-menu'."
+    },
     "_navTooltip": {
       "type": "object",
       "title": "Table of Contents navigation tooltip",
@@ -111,15 +120,6 @@
                   "title": "Enable TOC",
                   "inputType": "Checkbox",
                   "validators": []
-                },
-                "_iconClasses": {
-                  "type": "string",
-                  "required": false,
-                  "default": "icon-menu",
-                  "title": "Navigation button icon",
-                  "inputType": "Text",
-                  "validators": [],
-                  "help": "CSS class for the navigation button icon. Defaults to 'icon-menu'."
                 },
                 "_drawerPosition": {
                   "type": "string",
