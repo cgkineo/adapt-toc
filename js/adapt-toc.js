@@ -37,13 +37,15 @@ class Toc extends Backbone.Controller {
     const config = Adapt.course.get('_toc') || {};
     const globalsConfig = Toc.globalsConfig ?? {};
     const {
-      _navOrder = 0,
-      _showLabel = null,
-      _iconClasses = 'icon-menu',
-      navLabel = '',
       navigationToc = 'Open table of contents',
       _navTooltip = {}
     } = globalsConfig;
+    const {
+      _navOrder = 0,
+      _showLabel = null,
+      _iconClasses = 'icon-menu',
+      navLabel = ''
+    } = globalsConfig._navButton ?? {};
 
     const model = new NavigationButtonModel({
       _id: 'toc',
