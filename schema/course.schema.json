@@ -105,7 +105,7 @@
                         "text": {
                           "type": "string",
                           "title": "Tooltip text",
-                          "default": "Table of contents",
+                          "default": "Table of Contents",
                           "_adapt": {
                             "translatable": true
                           }
@@ -114,6 +114,49 @@
                     }
                   }
                 }
+              }
+            }
+          }
+        },
+        "_toc": {
+          "type": "object",
+          "title": "TOC",
+          "default": {},
+          "properties": {
+            "_isEnabled": {
+              "type": "boolean",
+              "title": "Enable TOC",
+              "default": true
+            },
+            "_drawerPosition": {
+              "type": "string",
+              "title": "Drawer position",
+              "description": "The side of the screen the table of contents drawer opens from. 'auto' follows the global drawer position",
+              "default": "auto",
+              "enum": [
+                "auto",
+                "left",
+                "right"
+              ],
+              "_backboneForms": "Select"
+            },
+            "_excludeContentObjects": {
+              "type": "array",
+              "title": "Exclusions",
+              "description": "Exclude zero or more content objects from the TOC by listing their IDs. To exclude the menu link, use 'course'",
+              "default": [],
+              "items": {
+                "type": "string"
+              }
+            },
+            "_grouping": {
+              "type": "object",
+              "title": "Grouping",
+              "description": "Configure the visual organisation of content objects (see example.json)",
+              "default": {},
+              "_backboneForms": {
+                "type": "CodeEditor",
+                "mode": "json"
               }
             }
           }
