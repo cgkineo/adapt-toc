@@ -87,11 +87,18 @@
                 "_drawerPosition": {
                   "type": "string",
                   "required": true,
-                  "default": "Drawer position",
-                  "inputType": "Text",
+                  "default": "auto",
+                  "title": "Drawer position",
+                  "inputType": {
+                    "type": "Select",
+                    "options": [
+                      "auto",
+                      "left",
+                      "right"
+                    ]
+                  },
                   "validators": [],
-                  "translatable": false,
-                  "help": "The position that the button appears in the drawer. Position options include 'auto', 'left', and 'right'. Defaults to 'auto'"
+                  "help": "The side of the screen the table of contents drawer opens from. 'auto' follows the global drawer position"
                 },
                 "_excludeContentObjects": {
                   "type": "array",

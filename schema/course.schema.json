@@ -1,0 +1,141 @@
+{
+  "$anchor": "toc-course",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$patch": {
+    "source": {
+      "$ref": "course"
+    },
+    "with": {
+      "properties": {
+        "_globals": {
+          "type": "object",
+          "default": {},
+          "properties": {
+            "_extensions": {
+              "type": "object",
+              "default": {},
+              "properties": {
+                "_toc": {
+                  "type": "object",
+                  "title": "TOC",
+                  "default": {},
+                  "properties": {
+                    "navigationToc": {
+                      "type": "string",
+                      "title": "Navigation button label",
+                      "description": "Accessible label for the navigation bar button that opens the table of contents",
+                      "default": "Open table of contents",
+                      "_adapt": {
+                        "translatable": true
+                      }
+                    },
+                    "toc": {
+                      "type": "string",
+                      "title": "Table of contents label",
+                      "description": "Accessible label for the table of contents region",
+                      "default": "Table of contents",
+                      "_adapt": {
+                        "translatable": true
+                      }
+                    },
+                    "tocEnd": {
+                      "type": "string",
+                      "title": "End of table of contents",
+                      "description": "Read out by screen readers at the end of the table of contents",
+                      "default": "You have reached the end of the table of contents.",
+                      "_adapt": {
+                        "translatable": true
+                      }
+                    },
+                    "tocContentObject": {
+                      "type": "string",
+                      "title": "Content object label",
+                      "description": "Accessible label for each content object in the table of contents",
+                      "default": "{{title}}. You have completed {{percentage}}%.",
+                      "_adapt": {
+                        "translatable": true
+                      }
+                    },
+                    "optionalContent": {
+                      "type": "string",
+                      "title": "Optional content",
+                      "default": "Optional Content",
+                      "_adapt": {
+                        "translatable": true
+                      }
+                    },
+                    "_navTooltip": {
+                      "type": "object",
+                      "title": "Table of Contents navigation tooltip",
+                      "default": {},
+                      "properties": {
+                        "_isEnabled": {
+                          "type": "boolean",
+                          "title": "Enable tooltip for navigation button",
+                          "default": true
+                        },
+                        "text": {
+                          "type": "string",
+                          "title": "",
+                          "description": "The tooltip text to display on hover over this item",
+                          "default": "Table of Contents",
+                          "_adapt": {
+                            "translatable": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "_toc": {
+          "type": "object",
+          "title": "TOC",
+          "default": {},
+          "properties": {
+            "_isEnabled": {
+              "type": "boolean",
+              "title": "Enable TOC",
+              "default": true
+            },
+            "_drawerPosition": {
+              "type": "string",
+              "title": "Drawer position",
+              "description": "The side of the screen the table of contents drawer opens from. 'auto' follows the global drawer position",
+              "default": "auto",
+              "enum": [
+                "auto",
+                "left",
+                "right"
+              ],
+              "_backboneForms": "Select"
+            },
+            "_excludeContentObjects": {
+              "type": "array",
+              "title": "Exclusions",
+              "description": "Exclude zero or more content objects from the TOC by listing their IDs. To exclude the menu link, use 'course'",
+              "default": [],
+              "items": {
+                "type": "string"
+              }
+            },
+            "_grouping": {
+              "type": "object",
+              "title": "Grouping",
+              "description": "Configure the visual organisation of content objects (see example.json)",
+              "default": {},
+              "_backboneForms": {
+                "type": "CodeEditor",
+                "mode": "json"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
