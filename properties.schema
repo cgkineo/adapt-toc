@@ -43,6 +43,49 @@
       "validators": [],
       "translatable": true
     },
+    "_navButton": {
+      "type": "object",
+      "title": "Navigation button",
+      "properties": {
+        "_navOrder": {
+          "type": "number",
+          "required": false,
+          "default": 0,
+          "title": "Navigation button order",
+          "inputType": "Number",
+          "validators": ["number"],
+          "help": "Determines the order in which the button appears in the navigation bar. Defaults to 0."
+        },
+        "_showLabel": {
+          "type": "boolean",
+          "required": false,
+          "default": true,
+          "title": "Show navigation button label",
+          "inputType": "Checkbox",
+          "validators": [],
+          "help": "Controls whether the navigation button label is displayed."
+        },
+        "_iconClasses": {
+          "type": "string",
+          "required": false,
+          "default": "icon-menu",
+          "title": "Navigation button icon",
+          "inputType": "Text",
+          "validators": [],
+          "help": "CSS class for the navigation button icon. Defaults to 'icon-menu'."
+        },
+        "navLabel": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Navigation bar label",
+          "inputType": "Text",
+          "validators": [],
+          "translatable": true,
+          "help": "The label for the navigation button. Defaults to the 'navigationToc' aria label if empty."
+        }
+      }
+    },
     "_navTooltip": {
       "type": "object",
       "title": "Table of Contents navigation tooltip",

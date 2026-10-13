@@ -1,6 +1,6 @@
 # adapt-toc
 
-This extension provides a drawer-based table of contents for Adapt as an alternative to (or to complement) a traditional menu (e.g. `adapt-contrib-boxMenu`).
+**Table of Contents** is an extension that provides a drawer-based table of contents for Adapt as an alternative to (or to complement) a traditional menu (e.g. `adapt-contrib-boxMenu`).
 
 There are two modes of operation: simple and custom.
 
@@ -14,102 +14,72 @@ If `adapt-contrib-pageLevelProgress` is enabled at course level (*course.json*),
 
 ## Settings Overview
 
-**ToC** is configured with the attributes that follow.
+**Table of Contents** is configured with the attributes that follow. The extension uses the [Navigation Button API](https://github.com/adaptlearning/adapt_framework/wiki/Navigation#navigation-button-api) (requires Framework 5.30.3+) which supports button labels, ordering, and tooltips.
 
-## Attributes
+### Attributes
 
-### *course.json - \_globals.\_extensions*
+All configuration options must be added and amended, where appropriate, for all JSON files.
 
-Add to *course.json* under *\_globals.\_extensions*.
+#### *course.json - \_globals.\_extensions*
 
-### **\_toc** (object)
+The following attributes are set within *course.json* under `_globals._extensions`. These control the navigation button appearance and labelling.
 
-The `_toc` object contains the following settings:
+**\_toc** (object): The Table of Contents globals object contains the following settings:
 
-#### **navigationToc** (string)
+>**navigationToc** (string): Aria label for the navigation button. Defaults to `"Open table of contents"`.
 
-Aria label for the navigation button
+>**toc** (string): Aria label to indicate the beginning of the table of contents. Defaults to `"Table of contents"`.
 
-#### **toc** (string)
+>**tocEnd** (string): Aria label to indicate the end of the table of contents. Defaults to `"You have reached the end of the table of contents."`.
 
-Aria label to indicate the beginning of the table of contents
+>**tocContentObject** (string): Aria label template for content object completion status. Supports `{{title}}` and `{{percentage}}` placeholders. Defaults to `"{{title}}. You have completed {{percentage}}%."`.
 
-#### **tocEnd** (string)
+>**optionalContent** (string): Label to indicate optional content. Defaults to `"Optional Content"`.
 
-Aria label to indicate the end of the table of contents
+>**\_navOrder** (number): Determines the order in which the button appears in the navigation bar. Defaults to `0`.
 
-#### **tocContentObject** (string)
+>**\_showLabel** (boolean): Controls whether the navigation button label is displayed. Defaults to `true`.
 
-Aria label to indicate completion
+>**\_iconClasses** (string): CSS class for the navigation button icon. Defaults to `"icon-menu"`.
 
-#### **optionalContent** (string)
+>**navLabel** (string): The button label text as it appears in the navigation. Defaults to the `navigationToc` aria label if empty.
 
-Label to indicate optional content
+>**\_navTooltip** (object): The Navigation Tooltip object. Used when tooltips are enabled globally.
 
-#### **\_navTooltip** (object)
+>>**\_isEnabled** (boolean): Controls whether the tooltip is enabled on the button. Defaults to `true`.
 
-The tooltip object. Used when tooltips are enabled globally
+>>**text** (string): The text of the tooltip. Defaults to `"Table of Contents"`.
 
-##### **\_isEnabled** (boolean)
+#### *course.json*
 
-Enables tooltips on the button
+The following attributes, set within *course.json*, configure the defaults for **Table of Contents**. Add directly to *course.json*.
 
-##### **text** (string)
+**\_toc** (object): The Table of Contents object contains the following settings:
 
-The text of the tooltip
+>**\_isEnabled** (boolean): Turns on and off the **Table of Contents** extension. Defaults to `true`.
 
-### *course.json*
+>**\_drawerPosition** (string): The position that the drawer appears. Options include `"auto"`, `"left"`, and `"right"`. Defaults to `"auto"`.
 
-The following attributes, set within *course.json*, configure the defaults for **ToC**. Add directly to *course.json*.
+>**\_excludeContentObjects** (array): Optional list of content object `_id` values to be *excluded* from the ToC list. For example, `["co-100"]` or `["co-100", "co-200"]`. To exclude the menu link, use `"course"`.
 
-### **\_toc** (object)
+>**\_grouping** (object): Defines a custom hierarchy of content objects. Contains the following settings:
 
-The `_toc` object contains the following settings:
+>>**title** (string): The title text for the group list.
 
-#### **\_isEnabled** (boolean)
+>>**\_ariaLevel** (number): Defines the group list title aria level. Usually set to `1` but can be overridden.
 
-Turns on and off the **ToC** extension.
+>>**\_classes** (string): CSS class name(s) to be applied to the group's containing `div`. Separate multiple classes with a space.
 
-#### **\_drawerPosition** (string)
+>>**\_items** (array): The items array contains the list of content objects to be included. Each item can also include a nested `_grouping` object. Items contain the following settings:
 
-The position that the button appears in the drawer. Position options include `auto`, `left`, and `right`. Defaults to `auto`
+>>>**\_classes** (string): CSS class name(s) to be applied to this item's containing `div`. Separate multiple classes with a space.
 
-#### **\_excludeContentObjects** (array)
-
-Optional list of content object `_id` values to be *excluded* from the ToC list. For example, `["co-100"]` or `["co-100", "co-200"]`. To exclude the menu link, use `course`.
-
-#### **\_grouping** (object)
-
-The grouping object contains the following settings:
-
-##### **title** (string)
-
-The title text for the group list
-
-##### **\_ariaLevel** (number)
-
-Define the group list title aria level. Usually this will be set to `1` but can be overridden.
-
-##### **\_classes** (string)
-
-CSS class name(s) to be applied to this groups containing `div`. The class(es) must be predefined in one of the Less files. Separate multiple classes with a space.
-
-##### **\_items** (array)
-
-The items array contains the list of content objects to be included. Can also include the `_grouping` object for nested items.
-
-###### **\_classes** (string)
-
-CSS class name(s) to be applied to this items containing `div`. The class(es) must be predefined in one of the Less files. Separate multiple classes with a space.
-
-###### **\_contentObjects** (array)
-
-List of content object ids to be *included* in the groups item list. For example, `["co-100"]` or `["co-100", "co-200"]`
+>>>**\_contentObjects** (array): List of content object IDs to be *included* in the group's item list. For example, `["co-100"]` or `["co-100", "co-200"]`.
 
 ### Notes
 
 - In most scenarios it is necessary to specify a start page (see [*example.json*](https://github.com/cgkineo/adapt-toc/blob/master/example.json)).
-- It may be necessary to remove (or hide) the back button (`.navigation-back-button`) to prevent Adapt attempting to navigate to `course` level.
+- It may be necessary to remove (or hide) the back button to prevent Adapt attempting to navigate to `course` level.
 
 ## Limitations
 
@@ -117,7 +87,7 @@ No known limitations.
 
 ----------------------------
 
-**Author / maintainer:**  CGKineo<br>
+**Author / maintainer:** Mindtools Kineo<br>
 **Accessibility support:** WAI AA<br>
 **RTL support:** Yes<br>
 **Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge, Safari for macOS/iOS/iPadOS, Opera<br>

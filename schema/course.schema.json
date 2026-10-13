@@ -1,0 +1,124 @@
+{
+  "$anchor": "toc-course",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$patch": {
+    "source": {
+      "$ref": "course"
+    },
+    "with": {
+      "properties": {
+        "_globals": {
+          "type": "object",
+          "default": {},
+          "properties": {
+            "_extensions": {
+              "type": "object",
+              "default": {},
+              "properties": {
+                "_toc": {
+                  "type": "object",
+                  "title": "Table of Contents",
+                  "default": {},
+                  "properties": {
+                    "navigationToc": {
+                      "type": "string",
+                      "title": "Navigation button aria label",
+                      "default": "Open table of contents",
+                      "_adapt": {
+                        "translatable": true
+                      }
+                    },
+                    "toc": {
+                      "type": "string",
+                      "title": "Drawer title",
+                      "default": "Table of contents",
+                      "_adapt": {
+                        "translatable": true
+                      }
+                    },
+                    "tocEnd": {
+                      "type": "string",
+                      "title": "End of TOC message",
+                      "default": "You have reached the end of the table of contents.",
+                      "_adapt": {
+                        "translatable": true
+                      }
+                    },
+                    "tocContentObject": {
+                      "type": "string",
+                      "title": "Content object aria label",
+                      "default": "{{title}}. You have completed {{percentage}}%.",
+                      "_adapt": {
+                        "translatable": true
+                      }
+                    },
+                    "optionalContent": {
+                      "type": "string",
+                      "title": "Optional content label",
+                      "default": "Optional Content",
+                      "_adapt": {
+                        "translatable": true
+                      }
+                    },
+                    "_navButton": {
+                      "type": "object",
+                      "title": "Navigation button",
+                      "default": {},
+                      "properties": {
+                        "_navOrder": {
+                          "type": "number",
+                          "title": "Navigation button order",
+                          "description": "Determines the order in which the button appears in the navigation bar. Negative numbers (e.g. -100) are left-aligned. Positive numbers (e.g. 100) are right-aligned.",
+                          "default": 0
+                        },
+                        "_showLabel": {
+                          "type": "boolean",
+                          "title": "Show navigation button label",
+                          "default": true
+                        },
+                        "_iconClasses": {
+                          "type": "string",
+                          "title": "Navigation button icon",
+                          "default": "icon-menu"
+                        },
+                        "navLabel": {
+                          "type": "string",
+                          "title": "Navigation bar label",
+                          "default": "",
+                          "_adapt": {
+                            "translatable": true
+                          }
+                        }
+                      }
+                    },
+                    "_navTooltip": {
+                      "type": "object",
+                      "title": "Navigation tooltip",
+                      "default": {},
+                      "properties": {
+                        "_isEnabled": {
+                          "type": "boolean",
+                          "title": "Enable tooltip for navigation button",
+                          "default": true
+                        },
+                        "text": {
+                          "type": "string",
+                          "title": "Tooltip text",
+                          "default": "Table of contents",
+                          "_adapt": {
+                            "translatable": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
